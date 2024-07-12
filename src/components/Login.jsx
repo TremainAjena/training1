@@ -44,8 +44,8 @@ function Login() {
           const userData = jwtDecode(jwt);
           localStorage.setItem("user", JSON.stringify(userData));
 
-          // setUser(userData);
-          navigate('/')
+          setUser(userData);
+          navigate('/counts')
         }
         else {
           console.log(response.data);
