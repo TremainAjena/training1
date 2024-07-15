@@ -16,13 +16,14 @@ function App() {
   useEffect(() => {
     const userData = localStorage.getItem("jwt")
     if (userData) {
+  
       login(userData)
     }
     else {
       logout()
     }
-  }
-)
+  }, [])
+
    const login = (userData) => {
       localStorage.setItem("jwt", userData)
       const user = jwtDecode(userData)
